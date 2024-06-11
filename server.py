@@ -3,6 +3,7 @@ import socketserver
 import os
 from PIL import Image
 
+
 PORT = 8000
 
 Handler = http.server.SimpleHTTPRequestHandler
@@ -26,3 +27,15 @@ image.show()
 image_path = 'path_to_uploaded_image.jpg'
 with open(image_path, 'wb') as f:
     f.write(image_data)
+
+    
+
+# Open the uploaded image
+image_path = 'uploaded_image.jpg'
+image = Image.open(image_path)
+
+# Resize the image
+image = image.resize((800, 600))
+
+# Save the resized image
+image.save('resized_image.jpg', optimize=True, quality=70)
