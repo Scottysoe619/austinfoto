@@ -16,6 +16,7 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
 
 # Open the uploaded image
 image_path = 'path_to_uploaded_image.jpg'
+image_path = 'D:/Photos/AustinFoto/Photos'
 image = Image.open(image_path)
 
 # Display the image
